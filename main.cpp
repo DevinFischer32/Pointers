@@ -2,20 +2,24 @@
 
 using namespace std;
 
+struct node
+{
+    int data;
+    node *next;
+    node(int x)
+    {
+        data = x;
+        /*
+            Pointer gets set equal to NULL; This allows for the pointer to
+            not be randomly assigned to another memory location or overrride a memory location
+        */
+        next = NULL;
+    }
+};
+
 int main()
 {
-    int x = 10;
-    /*
-        Holds the memory location for x not x's value
-        & derefrences the data and sends back the memory location
-        Allows for multiple varibles that go to same location; instead of creating a new memory location
-    */
-    int *pX = &x;
-    int **ppX = &pX;
-
-    cout << pX << endl;
-    cout << &x << endl;
-    cout << ppX << endl;
+    node *head = new node(20);
 
     return 0;
 }
